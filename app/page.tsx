@@ -34,7 +34,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content container">
           <div className="hero-text">
-            <h1>Personalize Everything</h1>
+            <h1>Personalize Coins, Tumblers, Ball Markers & More</h1>
             <p>Create meaningful, custom engraved products that tell your story</p>
             <div className="hero-buttons">
               <Link href="/products" className="btn-primary">

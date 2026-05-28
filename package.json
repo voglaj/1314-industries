@@ -1,0 +1,26 @@
+{
+  "name": "engraving-service",
+  "version": "1.0.0",
+  "description": "Professional online engraving service",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@stripe/stripe-js": "1.46.0",
+    "@stripe/react-stripe-js": "2.0.0",
+    "stripe": "13.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.2.2",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7"
+  }
+}

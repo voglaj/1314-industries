@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import '../products.css';
@@ -25,17 +25,49 @@ const products: Product[] = [
   { id: '8', name: 'Engraved Pen Set', price: 39.99, category: 'corporate', image: '✒️', description: 'Premium pen set for corporate gifts' },
 ];
 
+interface CartItem {
+  id: string;
+  quantity: number;
+  price: number;
+}
+
 export default function ProductsPage() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category') || 'all';
-  const [cart, setCart] = useState<string[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  const filteredProducts = categoryFilter === 'all' 
-    ? products 
+  useEffect(() => {
+    const stored = sessionStorage.getItem('cart');
+    if (stored) {
+      try {
+        setCart(JSON.parse(stored));
+      } catch (e) {
+        setCart([]);
+      }
+    }
+  }, []);
+
+  const filteredProducts = categoryFilter === 'all'
+    ? products
     : products.filter(p => p.category === categoryFilter);
 
   const addToCart = (productId: string) => {
-    setCart([...cart, productId]);
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const existing = cart.find(item => item.id === productId);
+    let updated: CartItem[];
+
+    if (existing) {
+      updated = cart.map(item =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    } else {
+      updated = [...cart, { id: productId, quantity: 1, price: product.price }];
+    }
+
+    setCart(updated);
+    sessionStorage.setItem('cart', JSON.stringify(updated));
   };
 
   return (

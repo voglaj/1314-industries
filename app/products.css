@@ -142,7 +142,7 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: white;
+  background: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: var(--shadow-lg);
@@ -150,6 +150,7 @@
   align-items: center;
   gap: 16px;
   z-index: 50;
+  border-left: 4px solid var(--accent);
 }
 
 .cart-notification p {

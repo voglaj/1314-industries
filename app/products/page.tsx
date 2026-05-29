@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import ProductModal from '@/app/components/ProductModal';
 import '../products.css';
 
 interface Product {
@@ -32,6 +33,8 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category') || 'all';
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('cart');
@@ -47,6 +50,16 @@ export default function ProductsPage() {
   const filteredProducts = categoryFilter === 'all'
     ? products
     : products.filter(p => p.category === categoryFilter);
+
+  const openProductModal = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeProductModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   const addToCart = (productId: string) => {
     const product = products.find(p => p.id === productId);
@@ -81,7 +94,13 @@ export default function ProductsPage() {
           <div className="products-grid">
             {filteredProducts.map((product) => (
               <div key={product.id} className="product-card">
-                <div className="product-image">{product.image}</div>
+                <button
+                  className="product-image-button"
+                  onClick={() => product.id === '1' ? openProductModal(product) : null}
+                  style={{ cursor: product.id === '1' ? 'pointer' : 'default' }}
+                >
+                  <div className="product-image">{product.image}</div>
+                </button>
                 <h3>{product.name}</h3>
                 <p className="product-description">{product.description}</p>
                 <div className="product-footer">
@@ -90,6 +109,13 @@ export default function ProductsPage() {
                     <Link href="/contact" className="btn-primary btn-small">
                       Contact Us
                     </Link>
+                  ) : product.id === '1' ? (
+                    <button
+                      className="btn-primary btn-small"
+                      onClick={() => openProductModal(product)}
+                    >
+                      View Options
+                    </button>
                   ) : (
                     <button
                       className="btn-primary btn-small"
@@ -118,6 +144,15 @@ export default function ProductsPage() {
             View Cart
           </Link>
         </div>
+      )}
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={closeProductModal}
+          onAddToCart={addToCart}
+        />
       )}
     </div>
   );

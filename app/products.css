@@ -86,6 +86,14 @@
   transform: translateY(-4px);
 }
 
+.product-image-button {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .product-image {
   width: 100%;
   padding: 40px;

@@ -19,7 +19,7 @@ const products: Product[] = [
   { id: '2', name: 'Tumblers', price: 55, category: 'gifts', image: '', description: 'Personalized tumblers with custom engraving' },
   { id: '3', name: 'Koozies', price: 35, category: 'gifts', image: '', description: 'Custom engraved koozies for beverages' },
   { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
-  { id: '5', name: 'Inquire Here', price: 0, category: 'corporate', image: '', description: 'Contact us for custom product inquiries and bulk orders' },
+  { id: '5', name: 'Inquire Here', price: 0, category: 'corporate', image: '', description: "Don't see what you are looking for? Contact us for custom product questions and bulk orders" },
 ];
 
 interface CartItem {
@@ -86,12 +86,18 @@ export default function ProductsPage() {
                 <p className="product-description">{product.description}</p>
                 <div className="product-footer">
                   {product.price > 0 && <span className="product-price">${product.price}</span>}
-                  <button
-                    className="btn-primary btn-small"
-                    onClick={() => addToCart(product.id)}
-                  >
-                    Add to Cart
-                  </button>
+                  {product.id === '5' ? (
+                    <Link href="/contact" className="btn-primary btn-small">
+                      Contact Us
+                    </Link>
+                  ) : (
+                    <button
+                      className="btn-primary btn-small"
+                      onClick={() => addToCart(product.id)}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

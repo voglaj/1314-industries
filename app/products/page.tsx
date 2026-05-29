@@ -15,10 +15,10 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: '1', name: 'Coins', price: 25.99, category: 'gifts', image: '', description: 'Custom engraved coins for collections and gifts' },
-  { id: '2', name: 'Tumblers', price: 55.99, category: 'gifts', image: '', description: 'Personalized tumblers with custom engraving' },
-  { id: '3', name: 'Koozies', price: 35.99, category: 'gifts', image: '', description: 'Custom engraved koozies for beverages' },
-  { id: '4', name: 'Ball Markers', price: 10.99, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
+  { id: '1', name: 'Coins', price: 25, category: 'gifts', image: '', description: 'Custom engraved coins for collections and gifts' },
+  { id: '2', name: 'Tumblers', price: 55, category: 'gifts', image: '', description: 'Personalized tumblers with custom engraving' },
+  { id: '3', name: 'Koozies', price: 35, category: 'gifts', image: '', description: 'Custom engraved koozies for beverages' },
+  { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
   { id: '5', name: 'Inquire Here', price: 0, category: 'corporate', image: '', description: 'Contact us for custom product inquiries and bulk orders' },
 ];
 

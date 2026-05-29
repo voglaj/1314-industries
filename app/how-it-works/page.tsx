@@ -35,7 +35,7 @@ export default function HowItWorks() {
     },
     {
       number: '6',
-      title: 'Ship & Enjoy',
+      title: 'We Ship, You Enjoy',
       description: 'Your personalized item is carefully packaged and shipped to you.',
       icon: '',
     },

@@ -56,6 +56,14 @@ export default function Contact() {
                   <p><a href="https://instagram.com/1314Industries" target="_blank" rel="noopener noreferrer">@1314Industries</a></p>
                 </div>
               </div>
+
+              <div className="contact-item">
+                <div className="contact-icon">👍</div>
+                <div>
+                  <h3>Facebook</h3>
+                  <p><a href="https://facebook.com/1314Industries" target="_blank" rel="noopener noreferrer">1314 Industries</a></p>
+                </div>
+              </div>
             </div>
           </div>
 

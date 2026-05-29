@@ -121,8 +121,8 @@ export default function ProductsPage() {
                 <h3>{product.name}</h3>
                 <p className="product-description">{product.description}</p>
                 <div className="product-footer">
-                  <span className="product-price">${product.price}</span>
-                  <button 
+                  {product.price > 0 && <span className="product-price">${product.price}</span>}
+                  <button
                     className="btn-primary btn-small"
                     onClick={() => addToCart(product.id)}
                   >

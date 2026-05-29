@@ -50,7 +50,9 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">📷</div>
+                <div className="contact-icon">
+                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fb227bb442a574b6e8ebd4e9819b00054?format=webp&width=800&height=1200" alt="Instagram" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div>
                   <h3>Instagram</h3>
                   <p><a href="https://instagram.com/1314Industries" target="_blank" rel="noopener noreferrer">@1314Industries</a></p>

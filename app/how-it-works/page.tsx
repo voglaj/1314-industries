@@ -53,14 +53,30 @@ export default function HowItWorks() {
       <section className="info-content">
         <div className="container">
           <div className="steps-grid">
-            {steps.map((step) => (
-              <div key={step.number} className="step-card">
-                <div className="step-number">{step.number}</div>
-                <div className="step-icon">{step.icon}</div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            ))}
+            {steps.map((step) => {
+              const stepContent = (
+                <>
+                  <div className="step-number">{step.number}</div>
+                  <div className="step-icon">{step.icon}</div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </>
+              );
+
+              if (step.number === '1') {
+                return (
+                  <Link key={step.number} href="/products" className="step-card">
+                    {stepContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={step.number} className="step-card">
+                  {stepContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

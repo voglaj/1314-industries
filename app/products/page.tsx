@@ -93,7 +93,7 @@ export default function ProductsPage() {
         <div className="products-main">
           <div className="products-grid">
             {filteredProducts.map((product) => {
-              const hasOptions = ['1', '2', '3'].includes(product.id);
+              const hasOptions = ['1', '2', '3', '4'].includes(product.id);
 
               return (
                 <div key={product.id} className="product-card">

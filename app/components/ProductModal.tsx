@@ -28,7 +28,7 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
   const handleAddToCart = () => {
     const options: Record<string, string> = {};
 
-    if (product.id === '1') {
+    if (product.id === '1' || product.id === '4') {
       options.size = selectedSize;
       options.type = selectedType;
     } else if (product.id === '2' || product.id === '3') {
@@ -53,7 +53,7 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
             <h2>{product.name}</h2>
             <p className="modal-description">{product.description}</p>
 
-            {product.id === '1' && (
+            {(product.id === '1' || product.id === '4') && (
               <>
                 <div className="modal-section">
                   <h3>Select Size</h3>

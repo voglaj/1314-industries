@@ -6,13 +6,13 @@ export default function HowItWorks() {
     {
       number: '1',
       title: 'Browse & Select',
-      description: 'Explore our collection of customizable products across multiple categories.',
+      description: 'Explore our collection of customizable products',
       icon: '',
     },
     {
       number: '2',
       title: 'Design Your Item',
-      description: 'Add your custom text, initials, or personal message to your chosen product.',
+      description: 'Add your custom text or logo, initials, or personal message to your chosen product.',
       icon: '',
     },
     {

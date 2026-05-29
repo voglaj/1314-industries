@@ -20,27 +20,6 @@ export default function About() {
               <p>Years later, they have taken that same chemistry and work ethic into building something of their own. What started as a friendship has grown into a business rooted in reliability, attention to detail, and a shared commitment to doing things the right way.</p>
             </div>
 
-            <div className="about-section">
-              <h2>Our Values</h2>
-              <div className="values-grid">
-                <div className="value-card">
-                  <h3>Quality</h3>
-                  <p>We use premium materials and precise engraving techniques to ensure every product exceeds expectations.</p>
-                </div>
-                <div className="value-card">
-                  <h3>Personalization</h3>
-                  <p>Each order receives personal attention to ensure your custom design is perfectly executed.</p>
-                </div>
-                <div className="value-card">
-                  <h3>Customer Service</h3>
-                  <p>Your satisfaction is our priority. We're here to help with questions and special requests.</p>
-                </div>
-                <div className="value-card">
-                  <h3>Innovation</h3>
-                  <p>We continuously improve our processes to offer new products and faster turnaround times.</p>
-                </div>
-              </div>
-            </div>
 
           </div>
         </div>

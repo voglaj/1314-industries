@@ -51,7 +51,7 @@ export default function Contact() {
 
               <div className="contact-item">
                 <div className="contact-icon">
-                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fa631c0a808214b208898804fa34c5073?format=webp&width=800&height=1200" alt="Instagram" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
+                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fa631c0a808214b208898804fa34c5073?format=webp&width=800&height=1200" alt="Instagram" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                 </div>
                 <div>
                   <h3>Instagram</h3>

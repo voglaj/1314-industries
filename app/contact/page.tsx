@@ -60,7 +60,9 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">👍</div>
+                <div className="contact-icon">
+                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fdf898e810bbc4b67b7a85c859f89f3cc?format=webp&width=800&height=1200" alt="Facebook" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                </div>
                 <div>
                   <h3>Facebook</h3>
                   <p><a href="https://facebook.com/1314Industries" target="_blank" rel="noopener noreferrer">1314 Industries</a></p>

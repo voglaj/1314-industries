@@ -28,7 +28,7 @@ export default function About() {
       <section className="team-section">
         <div className="container">
           <h2>Our Team</h2>
-          <p className="section-intro">Dedicated professionals committed to your satisfaction</p>
+          <p className="section-intro">Two friends with a shared goal</p>
           <div className="team-grid">
             <div className="team-member">
               <div className="member-avatar"></div>

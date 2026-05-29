@@ -16,8 +16,8 @@ export default function About() {
           <div className="about-sections">
             <div className="about-section">
               <h2>Our Story</h2>
-              <p>Premium Engraving was founded with a simple mission: to help people create meaningful, personalized gifts that last a lifetime. We believe that the best gifts are those that tell a personal story.</p>
-              <p>With years of experience in the engraving industry, our team combines traditional craftsmanship with modern technology to deliver exceptional results for every customer.</p>
+              <p>1314 Industries was founded by Pat Engelbride and Matt Bievenue. They have been building together long before this business ever existed. Their partnership started over a decade ago in high school, where they played hockey together on the same line for three straight seasons—learning firsthand the value of trust, communication, and accountability while developing a shared mindset centered around discipline, consistency, and performing under pressure.</p>
+              <p>Years later, they have taken that same chemistry and work ethic into building something of their own. What started as a friendship has grown into a business rooted in reliability, attention to detail, and a shared commitment to doing things the right way.</p>
             </div>
 
             <div className="about-section">

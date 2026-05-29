@@ -15,14 +15,10 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: '1', name: 'Leather Bracelet', price: 34.99, category: 'jewelry', image: '⌚', description: 'Premium leather with custom engraving' },
-  { id: '2', name: 'Silver Necklace', price: 54.99, category: 'jewelry', image: '⛓️', description: 'Sterling silver personalized pendant' },
-  { id: '3', name: 'Crystal Award', price: 89.99, category: 'awards', image: '🏆', description: 'Elegant crystal trophy with custom text' },
-  { id: '4', name: 'Wooden Plaque', price: 49.99, category: 'awards', image: '📜', description: 'Premium wood recognition plaque' },
-  { id: '5', name: 'Personalized Mug', price: 14.99, category: 'gifts', image: '☕', description: 'Ceramic mug with custom photo/text' },
-  { id: '6', name: 'Custom Keychain', price: 9.99, category: 'gifts', image: '🔑', description: 'Metal keychain with engraved initials' },
-  { id: '7', name: 'Branded Water Bottle', price: 24.99, category: 'corporate', image: '🍶', description: 'Stainless steel with company logo' },
-  { id: '8', name: 'Engraved Pen Set', price: 39.99, category: 'corporate', image: '✒️', description: 'Premium pen set for corporate gifts' },
+  { id: '1', name: 'Coins', price: 19.99, category: 'gifts', image: '🪙', description: 'Custom engraved coins for collections and gifts' },
+  { id: '2', name: 'Yetis', price: 34.99, category: 'gifts', image: '🍺', description: 'Personalized Yeti drinkware with custom engraving' },
+  { id: '3', name: 'Ball Markers', price: 12.99, category: 'gifts', image: '⛳', description: 'Custom golf ball markers with engraved designs' },
+  { id: '4', name: 'Inquire Here', price: 0, category: 'corporate', image: '❓', description: 'Contact us for custom product inquiries and bulk orders' },
 ];
 
 interface CartItem {

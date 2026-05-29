@@ -42,17 +42,6 @@ export default function About() {
               </div>
             </div>
 
-            <div className="about-section">
-              <h2>Why Choose Us?</h2>
-              <ul className="features-list">
-                <li>Expert engraving team with 20+ years of combined experience</li>
-                <li>Wide selection of products across multiple categories</li>
-                <li>Fast turnaround times without compromising quality</li>
-                <li>Secure online ordering with Stripe payment processing</li>
-                <li>All items shipped with care and insurance included</li>
-                <li>30-day satisfaction guarantee on all orders</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>

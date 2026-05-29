@@ -92,41 +92,45 @@ export default function ProductsPage() {
       <section className="products-content container">
         <div className="products-main">
           <div className="products-grid">
-            {filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                <button
-                  className="product-image-button"
-                  onClick={() => product.id === '1' ? openProductModal(product) : null}
-                  style={{ cursor: product.id === '1' ? 'pointer' : 'default' }}
-                >
-                  <div className="product-image">{product.image}</div>
-                </button>
-                <h3>{product.name}</h3>
-                <p className="product-description">{product.description}</p>
-                <div className="product-footer">
-                  {product.price > 0 && <span className="product-price">${product.price}</span>}
-                  {product.id === '5' ? (
-                    <Link href="/contact" className="btn-primary btn-small">
-                      Contact Us
-                    </Link>
-                  ) : product.id === '1' ? (
-                    <button
-                      className="btn-primary btn-small"
-                      onClick={() => openProductModal(product)}
-                    >
-                      View Options
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-primary btn-small"
-                      onClick={() => addToCart(product.id)}
-                    >
-                      Add to Cart
-                    </button>
-                  )}
+            {filteredProducts.map((product) => {
+              const hasOptions = ['1', '2', '3'].includes(product.id);
+
+              return (
+                <div key={product.id} className="product-card">
+                  <button
+                    className="product-image-button"
+                    onClick={() => hasOptions ? openProductModal(product) : null}
+                    style={{ cursor: hasOptions ? 'pointer' : 'default' }}
+                  >
+                    <div className="product-image">{product.image}</div>
+                  </button>
+                  <h3>{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
+                  <div className="product-footer">
+                    {product.price > 0 && <span className="product-price">${product.price}</span>}
+                    {product.id === '5' ? (
+                      <Link href="/contact" className="btn-primary btn-small">
+                        Contact Us
+                      </Link>
+                    ) : hasOptions ? (
+                      <button
+                        className="btn-primary btn-small"
+                        onClick={() => openProductModal(product)}
+                      >
+                        View Options
+                      </button>
+                    ) : (
+                      <button
+                        className="btn-primary btn-small"
+                        onClick={() => addToCart(product.id)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {filteredProducts.length === 0 && (

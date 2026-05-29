@@ -16,16 +16,26 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductModalProps) {
+  // Coins options
   const [selectedSize, setSelectedSize] = useState<string>('32mm');
   const [selectedType, setSelectedType] = useState<string>('stainless steel');
+
+  // Tumblers & Koozies options
+  const [selectedColor, setSelectedColor] = useState<string>('red');
 
   if (!isOpen) return null;
 
   const handleAddToCart = () => {
-    onAddToCart(product.id, {
-      size: selectedSize,
-      type: selectedType,
-    });
+    const options: Record<string, string> = {};
+
+    if (product.id === '1') {
+      options.size = selectedSize;
+      options.type = selectedType;
+    } else if (product.id === '2' || product.id === '3') {
+      options.color = selectedColor;
+    }
+
+    onAddToCart(product.id, options);
     onClose();
   };
 
@@ -42,7 +52,7 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
           <div className="modal-details">
             <h2>{product.name}</h2>
             <p className="modal-description">{product.description}</p>
-            
+
             {product.id === '1' && (
               <>
                 <div className="modal-section">
@@ -107,6 +117,44 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
                   </div>
                 </div>
               </>
+            )}
+
+            {(product.id === '2' || product.id === '3') && (
+              <div className="modal-section">
+                <h3>Select Color</h3>
+                <div className="options-group">
+                  <label className="option-radio">
+                    <input
+                      type="radio"
+                      name="color"
+                      value="red"
+                      checked={selectedColor === 'red'}
+                      onChange={(e) => setSelectedColor(e.target.value)}
+                    />
+                    <span>Red</span>
+                  </label>
+                  <label className="option-radio">
+                    <input
+                      type="radio"
+                      name="color"
+                      value="black"
+                      checked={selectedColor === 'black'}
+                      onChange={(e) => setSelectedColor(e.target.value)}
+                    />
+                    <span>Black</span>
+                  </label>
+                  <label className="option-radio">
+                    <input
+                      type="radio"
+                      name="color"
+                      value="navy blue"
+                      checked={selectedColor === 'navy blue'}
+                      onChange={(e) => setSelectedColor(e.target.value)}
+                    />
+                    <span>Navy Blue</span>
+                  </label>
+                </div>
+              </div>
             )}
 
             <div className="modal-footer">

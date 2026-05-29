@@ -16,8 +16,7 @@ export default function About() {
           <div className="about-sections">
             <div className="about-section">
               <h2>Our Story</h2>
-              <p>1314 Industries was founded by Pat Engelbride and Matt Bievenue. They have been building together long before this business ever existed. Their partnership started over a decade ago in high school, where they played hockey together on the same line for three straight seasons—learning firsthand the value of trust, communication, and accountability while developing a shared mindset centered around discipline, consistency, and performing under pressure.</p>
-              <p>Years later, they have taken that same chemistry and work ethic into building something of their own. What started as a friendship has grown into a business rooted in reliability, attention to detail, and a shared commitment to doing things the right way.</p>
+              <p>1314 Industries was founded by Pat Engelbride and Matt Bievenue. They have been working together long before this business ever existed. Their partnership started over a decade ago in high school, where they played hockey together on the same line for three straight seasons—learning firsthand the value of trust, communication, and accountability while developing a shared mindset centered around discipline, consistency, and performing under pressure.<br/><br/>Years later, they have taken that same chemistry and work ethic into building something of their own. What started as a friendship has grown into a business rooted in reliability, attention to detail, and a shared commitment to doing things the right way.</p>
             </div>
 
 

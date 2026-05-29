@@ -79,7 +79,7 @@ export default function HowItWorks() {
             </div>
             <div className="faq-item">
               <h4>What engraving options do you offer?</h4>
-              <p>We offer laser engraving, hand engraving, and impact engraving depending on the material and product.</p>
+              <p>We offer laser engraving and embossing depending on the material and product.</p>
             </div>
             <div className="faq-item">
               <h4>Do you ship internationally?</h4>

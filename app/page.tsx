@@ -53,24 +53,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="categories-section">
-        <div className="container">
-          <h2>Shop by Category</h2>
-          <div className="categories-grid">
-            {categories.map((category) => (
-              <Link href={`/products?category=${category.id}`} key={category.id}>
-                <div className="category-card">
-                  <div className="category-icon">{category.icon}</div>
-                  <h3>{category.name}</h3>
-                  <p>{category.description}</p>
-                  <span className="arrow">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="features-section">
         <div className="container">
           <h2>Why Choose Us</h2>

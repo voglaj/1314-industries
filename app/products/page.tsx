@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import ProductModal from '@/app/components/ProductModal';
+import ProductModal from '../components/ProductModal';
 import '../products.css';
 
 interface Product {

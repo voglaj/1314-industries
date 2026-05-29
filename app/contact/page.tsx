@@ -45,33 +45,15 @@ export default function Contact() {
                 <div className="contact-icon">📧</div>
                 <div>
                   <h3>Email</h3>
-                  <p><a href="mailto:hello@example.com">hello@example.com</a></p>
-                  <p className="text-secondary">We'll respond within 24 hours</p>
+                  <p><a href="mailto:Pat@1314industries.com">Pat@1314industries.com</a></p>
                 </div>
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">📞</div>
+                <div className="contact-icon">📱</div>
                 <div>
-                  <h3>Phone</h3>
-                  <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-                  <p className="text-secondary">Mon-Fri, 9am-5pm EST</p>
-                </div>
-              </div>
-
-              <div className="contact-item">
-                <div className="contact-icon">📍</div>
-                <div>
-                  <h3>Address</h3>
-                  <p>123 Craft Lane<br/>Artisan City, ST 12345<br/>United States</p>
-                </div>
-              </div>
-
-              <div className="contact-item">
-                <div className="contact-icon">💬</div>
-                <div>
-                  <h3>Business Hours</h3>
-                  <p>Monday - Friday: 9:00 AM - 5:00 PM EST<br/>Saturday - Sunday: Closed</p>
+                  <h3>Instagram</h3>
+                  <p><a href="https://instagram.com/1314Industries" target="_blank" rel="noopener noreferrer">@1314Industries</a></p>
                 </div>
               </div>
             </div>

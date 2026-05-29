@@ -30,6 +30,9 @@ export default function Navigation() {
           <Link href="/how-it-works" className="nav-link">
             How It Works
           </Link>
+          <Link href="/faq" className="nav-link">
+            FAQ
+          </Link>
           <Link href="/about" className="nav-link">
             About
           </Link>

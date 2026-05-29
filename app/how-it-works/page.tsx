@@ -81,38 +81,6 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="faq-section">
-        <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h4>How long does engraving take?</h4>
-              <p>Most orders are completed within 5-7 business days, excluding weekends and holidays.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Can I change my order after submitting?</h4>
-              <p>Contact us within 24 hours of placing your order. We'll do our best to accommodate changes before engraving begins.</p>
-            </div>
-            <div className="faq-item">
-              <h4>What engraving options do you offer?</h4>
-              <p>We offer laser engraving and embossing depending on the material and product.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Do you ship internationally?</h4>
-              <p>Currently, we ship within the continental United States. Contact us for international shipping inquiries.</p>
-            </div>
-            <div className="faq-item">
-              <h4>What if I'm not satisfied?</h4>
-              <p>We offer a 30-day satisfaction guarantee. If you're unhappy, contact us for a return or replacement.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Can you engrave corporate logos?</h4>
-              <p>Yes! We specialize in corporate engraving. Contact us for bulk orders and custom quotes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="cta-section">
         <div className="container">
           <h2>Ready to create something special?</h2>

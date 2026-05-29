@@ -7,37 +7,37 @@ export default function HowItWorks() {
       number: '1',
       title: 'Browse & Select',
       description: 'Explore our collection of customizable products across multiple categories.',
-      icon: '🛍️',
+      icon: '',
     },
     {
       number: '2',
       title: 'Design Your Item',
       description: 'Add your custom text, initials, or personal message to your chosen product.',
-      icon: '✏️',
+      icon: '',
     },
     {
       number: '3',
       title: 'Review & Confirm',
       description: 'Review your design and specifications before adding to cart.',
-      icon: '✓',
+      icon: '',
     },
     {
       number: '4',
       title: 'Checkout',
       description: 'Secure payment through Stripe with your credit or debit card.',
-      icon: '💳',
+      icon: '',
     },
     {
       number: '5',
       title: 'Engraving',
       description: 'Our team precisely engraves your custom design on your product.',
-      icon: '⚙️',
+      icon: '',
     },
     {
       number: '6',
       title: 'Ship & Enjoy',
       description: 'Your personalized item is carefully packaged and shipped to you.',
-      icon: '📦',
+      icon: '',
     },
   ];
 

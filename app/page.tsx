@@ -53,34 +53,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="features-section">
-        <div className="container">
-          <h2>Why Choose Us</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Fast Turnaround</h3>
-              <p>Most orders completed within 5-7 business days</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">✓</div>
-              <h3>Quality Guaranteed</h3>
-              <p>Premium materials and precise engraving techniques</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🎨</div>
-              <h3>Expert Design</h3>
-              <p>Our team helps bring your vision to life</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📦</div>
-              <h3>Secure Shipping</h3>
-              <p>All items shipped with care and insurance</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">

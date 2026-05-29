@@ -59,7 +59,6 @@ export default function About() {
             <div className="team-member">
               <div className="member-avatar"></div>
               <h3>Pat Engelbride</h3>
-              <p className="member-role">Design Specialist</p>
               <p className="member-bio">Creates custom designs that bring your vision to life.</p>
             </div>
           </div>

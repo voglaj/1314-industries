@@ -22,9 +22,7 @@
 }
 
 .products-content {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 40px;
+  display: block;
   padding-bottom: 60px;
 }
 

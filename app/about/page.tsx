@@ -53,13 +53,12 @@ export default function About() {
           <div className="team-grid">
             <div className="team-member">
               <div className="member-avatar">👨‍🔧</div>
-              <h3>John Smith</h3>
-              <p className="member-role">Master Engraver</p>
+              <h3>Matt Bievenue</h3>
               <p className="member-bio">20+ years of engraving experience across all materials.</p>
             </div>
             <div className="team-member">
               <div className="member-avatar">👩‍🎨</div>
-              <h3>Sarah Johnson</h3>
+              <h3>Pat Engelbride</h3>
               <p className="member-role">Design Specialist</p>
               <p className="member-bio">Creates custom designs that bring your vision to life.</p>
             </div>

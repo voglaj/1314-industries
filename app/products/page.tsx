@@ -77,42 +77,6 @@ export default function ProductsPage() {
       </section>
 
       <section className="products-content container">
-        <aside className="filters">
-          <h3>Categories</h3>
-          <div className="filter-group">
-            <Link 
-              href="/products" 
-              className={`filter-link ${categoryFilter === 'all' ? 'active' : ''}`}
-            >
-              All Products
-            </Link>
-            <Link 
-              href="/products?category=jewelry" 
-              className={`filter-link ${categoryFilter === 'jewelry' ? 'active' : ''}`}
-            >
-              Jewelry
-            </Link>
-            <Link 
-              href="/products?category=awards" 
-              className={`filter-link ${categoryFilter === 'awards' ? 'active' : ''}`}
-            >
-              Awards & Trophies
-            </Link>
-            <Link 
-              href="/products?category=gifts" 
-              className={`filter-link ${categoryFilter === 'gifts' ? 'active' : ''}`}
-            >
-              Custom Gifts
-            </Link>
-            <Link 
-              href="/products?category=corporate" 
-              className={`filter-link ${categoryFilter === 'corporate' ? 'active' : ''}`}
-            >
-              Corporate Items
-            </Link>
-          </div>
-        </aside>
-
         <div className="products-main">
           <div className="products-grid">
             {filteredProducts.map((product) => (

@@ -35,7 +35,7 @@ export default function Home() {
         <div className="hero-content container">
           <div className="hero-text">
             <h1>Personalize Coins, Tumblers, Ball Markers & More</h1>
-            <p>Create meaningful, custom engraved products that tell your story</p>
+            <p>Create meaningful, custom engraved products that tell your story or shop our standard designs</p>
             <div className="hero-buttons">
               <Link href="/products" className="btn-primary">
                 Start Shopping

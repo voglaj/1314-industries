@@ -23,6 +23,9 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
   // Tumblers & Koozies options
   const [selectedColor, setSelectedColor] = useState<string>('red');
 
+  // Design type (for Coins, Tumblers, Koozies)
+  const [selectedDesign, setSelectedDesign] = useState<string>('custom');
+
   if (!isOpen) return null;
 
   const handleAddToCart = () => {
@@ -33,6 +36,10 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
       options.type = selectedType;
     } else if (product.id === '2' || product.id === '3') {
       options.color = selectedColor;
+    }
+
+    if (product.id === '1' || product.id === '2' || product.id === '3') {
+      options.design = selectedDesign;
     }
 
     onAddToCart(product.id, options);
@@ -120,38 +127,94 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
             )}
 
             {(product.id === '2' || product.id === '3') && (
+              <>
+                <div className="modal-section">
+                  <h3>Select Color</h3>
+                  <div className="options-group">
+                    <label className="option-radio">
+                      <input
+                        type="radio"
+                        name="color"
+                        value="red"
+                        checked={selectedColor === 'red'}
+                        onChange={(e) => setSelectedColor(e.target.value)}
+                      />
+                      <span>Red</span>
+                    </label>
+                    <label className="option-radio">
+                      <input
+                        type="radio"
+                        name="color"
+                        value="black"
+                        checked={selectedColor === 'black'}
+                        onChange={(e) => setSelectedColor(e.target.value)}
+                      />
+                      <span>Black</span>
+                    </label>
+                    <label className="option-radio">
+                      <input
+                        type="radio"
+                        name="color"
+                        value="navy blue"
+                        checked={selectedColor === 'navy blue'}
+                        onChange={(e) => setSelectedColor(e.target.value)}
+                      />
+                      <span>Navy Blue</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="modal-section">
+                  <h3>Design Type</h3>
+                  <div className="options-group">
+                    <label className="option-radio">
+                      <input
+                        type="radio"
+                        name="design"
+                        value="custom"
+                        checked={selectedDesign === 'custom'}
+                        onChange={(e) => setSelectedDesign(e.target.value)}
+                      />
+                      <span>Custom Design</span>
+                    </label>
+                    <label className="option-radio">
+                      <input
+                        type="radio"
+                        name="design"
+                        value="standard"
+                        checked={selectedDesign === 'standard'}
+                        onChange={(e) => setSelectedDesign(e.target.value)}
+                      />
+                      <span>Standard Design</span>
+                    </label>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {product.id === '1' && (
               <div className="modal-section">
-                <h3>Select Color</h3>
+                <h3>Design Type</h3>
                 <div className="options-group">
                   <label className="option-radio">
                     <input
                       type="radio"
-                      name="color"
-                      value="red"
-                      checked={selectedColor === 'red'}
-                      onChange={(e) => setSelectedColor(e.target.value)}
+                      name="design"
+                      value="custom"
+                      checked={selectedDesign === 'custom'}
+                      onChange={(e) => setSelectedDesign(e.target.value)}
                     />
-                    <span>Red</span>
+                    <span>Custom Design</span>
                   </label>
                   <label className="option-radio">
                     <input
                       type="radio"
-                      name="color"
-                      value="black"
-                      checked={selectedColor === 'black'}
-                      onChange={(e) => setSelectedColor(e.target.value)}
+                      name="design"
+                      value="standard"
+                      checked={selectedDesign === 'standard'}
+                      onChange={(e) => setSelectedDesign(e.target.value)}
                     />
-                    <span>Black</span>
-                  </label>
-                  <label className="option-radio">
-                    <input
-                      type="radio"
-                      name="color"
-                      value="navy blue"
-                      checked={selectedColor === 'navy blue'}
-                      onChange={(e) => setSelectedColor(e.target.value)}
-                    />
-                    <span>Navy Blue</span>
+                    <span>Standard Design</span>
                   </label>
                 </div>
               </div>

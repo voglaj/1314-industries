@@ -50,7 +50,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">📱</div>
+                <div className="contact-icon">📷</div>
                 <div>
                   <h3>Instagram</h3>
                   <p><a href="https://instagram.com/1314Industries" target="_blank" rel="noopener noreferrer">@1314Industries</a></p>

@@ -52,18 +52,18 @@ export default function About() {
           <p className="section-intro">Dedicated professionals committed to your satisfaction</p>
           <div className="team-grid">
             <div className="team-member">
-              <div className="member-avatar">👨‍🔧</div>
+              <div className="member-avatar"></div>
               <h3>Matt Bievenue</h3>
               <p className="member-bio">20+ years of engraving experience across all materials.</p>
             </div>
             <div className="team-member">
-              <div className="member-avatar">👩‍🎨</div>
+              <div className="member-avatar"></div>
               <h3>Pat Engelbride</h3>
               <p className="member-role">Design Specialist</p>
               <p className="member-bio">Creates custom designs that bring your vision to life.</p>
             </div>
             <div className="team-member">
-              <div className="member-avatar">👨‍💼</div>
+              <div className="member-avatar"></div>
               <h3>Michael Lee</h3>
               <p className="member-role">Customer Service Lead</p>
               <p className="member-bio">Ensures every customer receives exceptional support.</p>

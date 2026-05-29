@@ -37,7 +37,7 @@ export default function Navigation() {
             Contact
           </Link>
           <Link href="/cart" className="nav-link nav-cart">
-            🛒 Cart
+            Cart
           </Link>
         </div>
       </div>

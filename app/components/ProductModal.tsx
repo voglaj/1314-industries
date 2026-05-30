@@ -24,7 +24,7 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
   const [selectedColor, setSelectedColor] = useState<string>('red');
 
   // Design type (for Coins, Tumblers, Koozies)
-  const [selectedDesign, setSelectedDesign] = useState<string>('custom');
+  const [selectedDesign, setSelectedDesign] = useState<string>('standard');
 
   if (!isOpen) return null;
 

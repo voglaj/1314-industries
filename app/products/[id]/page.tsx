@@ -23,6 +23,7 @@ const products: Product[] = [
 
 interface CartItem {
   id: string;
+  name: string;
   quantity: number;
   price: number;
 }
@@ -91,7 +92,7 @@ export default function ProductDetailPage() {
         item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
       );
     } else {
-      updated = [...cart, { id: productId, quantity: 1, price: getAdjustedPrice() }];
+      updated = [...cart, { id: productId, name: product.name, quantity: 1, price: getAdjustedPrice() }];
     }
 
     setCart(updated);

@@ -11,8 +11,7 @@ export default function Navigation() {
     <nav className="navbar">
       <div className="nav-container container">
         <Link href="/" className="nav-logo">
-          <span className="logo-icon">✨</span>
-          Premium Engraving
+          <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fcee59e4865bd4b4e8bb5a9f54b04e427?format=webp&width=800&height=1200" alt="1314 Industries" className="logo-image" />
         </Link>
         
         <button 
@@ -31,6 +30,9 @@ export default function Navigation() {
           <Link href="/how-it-works" className="nav-link">
             How It Works
           </Link>
+          <Link href="/faq" className="nav-link">
+            FAQ
+          </Link>
           <Link href="/about" className="nav-link">
             About
           </Link>
@@ -38,7 +40,7 @@ export default function Navigation() {
             Contact
           </Link>
           <Link href="/cart" className="nav-link nav-cart">
-            🛒 Cart
+            Cart
           </Link>
         </div>
       </div>

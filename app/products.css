@@ -22,9 +22,7 @@
 }
 
 .products-content {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 40px;
+  display: block;
   padding-bottom: 60px;
 }
 
@@ -86,6 +84,14 @@
 .product-card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
+}
+
+.product-image-button {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .product-image {

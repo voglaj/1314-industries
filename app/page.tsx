@@ -35,7 +35,7 @@ export default function Home() {
         <div className="hero-content container">
           <div className="hero-text">
             <h1>Personalize Coins, Tumblers, Ball Markers & More</h1>
-            <p>Create meaningful, custom engraved products that tell your story</p>
+            <p>Create meaningful, custom engraved products that tell your story or shop our standard designs</p>
             <div className="hero-buttons">
               <Link href="/products" className="btn-primary">
                 Start Shopping
@@ -48,52 +48,6 @@ export default function Home() {
           <div className="hero-image">
             <div className="hero-placeholder">
               ✨ Premium Engraving ✨
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="categories-section">
-        <div className="container">
-          <h2>Shop by Category</h2>
-          <div className="categories-grid">
-            {categories.map((category) => (
-              <Link href={`/products?category=${category.id}`} key={category.id}>
-                <div className="category-card">
-                  <div className="category-icon">{category.icon}</div>
-                  <h3>{category.name}</h3>
-                  <p>{category.description}</p>
-                  <span className="arrow">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="features-section">
-        <div className="container">
-          <h2>Why Choose Us</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Fast Turnaround</h3>
-              <p>Most orders completed within 5-7 business days</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">✓</div>
-              <h3>Quality Guaranteed</h3>
-              <p>Premium materials and precise engraving techniques</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🎨</div>
-              <h3>Expert Design</h3>
-              <p>Our team helps bring your vision to life</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📦</div>
-              <h3>Secure Shipping</h3>
-              <p>All items shipped with care and insurance</p>
             </div>
           </div>
         </div>

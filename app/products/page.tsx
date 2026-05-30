@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import ProductModal from '../components/ProductModal';
 import '../products.css';
 
 interface Product {
@@ -15,14 +16,11 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: '1', name: 'Leather Bracelet', price: 34.99, category: 'jewelry', image: '⌚', description: 'Premium leather with custom engraving' },
-  { id: '2', name: 'Silver Necklace', price: 54.99, category: 'jewelry', image: '⛓️', description: 'Sterling silver personalized pendant' },
-  { id: '3', name: 'Crystal Award', price: 89.99, category: 'awards', image: '🏆', description: 'Elegant crystal trophy with custom text' },
-  { id: '4', name: 'Wooden Plaque', price: 49.99, category: 'awards', image: '📜', description: 'Premium wood recognition plaque' },
-  { id: '5', name: 'Personalized Mug', price: 14.99, category: 'gifts', image: '☕', description: 'Ceramic mug with custom photo/text' },
-  { id: '6', name: 'Custom Keychain', price: 9.99, category: 'gifts', image: '🔑', description: 'Metal keychain with engraved initials' },
-  { id: '7', name: 'Branded Water Bottle', price: 24.99, category: 'corporate', image: '🍶', description: 'Stainless steel with company logo' },
-  { id: '8', name: 'Engraved Pen Set', price: 39.99, category: 'corporate', image: '✒️', description: 'Premium pen set for corporate gifts' },
+  { id: '1', name: 'Coins', price: 25, category: 'gifts', image: '', description: 'Custom engraved coins for collections and gifts' },
+  { id: '2', name: 'Tumblers', price: 55, category: 'gifts', image: '', description: 'Personalized tumblers with custom engraving' },
+  { id: '3', name: 'Koozies', price: 35, category: 'gifts', image: '', description: 'Custom engraved koozies for beverages' },
+  { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
+  { id: '5', name: 'Inquire Here', price: 0, category: 'corporate', image: '', description: "Don't see what you are looking for? Contact us for custom product questions and bulk orders" },
 ];
 
 interface CartItem {
@@ -35,6 +33,8 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category') || 'all';
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('cart');
@@ -50,6 +50,16 @@ export default function ProductsPage() {
   const filteredProducts = categoryFilter === 'all'
     ? products
     : products.filter(p => p.category === categoryFilter);
+
+  const openProductModal = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeProductModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   const addToCart = (productId: string) => {
     const product = products.find(p => p.id === productId);
@@ -80,60 +90,47 @@ export default function ProductsPage() {
       </section>
 
       <section className="products-content container">
-        <aside className="filters">
-          <h3>Categories</h3>
-          <div className="filter-group">
-            <Link 
-              href="/products" 
-              className={`filter-link ${categoryFilter === 'all' ? 'active' : ''}`}
-            >
-              All Products
-            </Link>
-            <Link 
-              href="/products?category=jewelry" 
-              className={`filter-link ${categoryFilter === 'jewelry' ? 'active' : ''}`}
-            >
-              Jewelry
-            </Link>
-            <Link 
-              href="/products?category=awards" 
-              className={`filter-link ${categoryFilter === 'awards' ? 'active' : ''}`}
-            >
-              Awards & Trophies
-            </Link>
-            <Link 
-              href="/products?category=gifts" 
-              className={`filter-link ${categoryFilter === 'gifts' ? 'active' : ''}`}
-            >
-              Custom Gifts
-            </Link>
-            <Link 
-              href="/products?category=corporate" 
-              className={`filter-link ${categoryFilter === 'corporate' ? 'active' : ''}`}
-            >
-              Corporate Items
-            </Link>
-          </div>
-        </aside>
-
         <div className="products-main">
           <div className="products-grid">
-            {filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-image">{product.image}</div>
-                <h3>{product.name}</h3>
-                <p className="product-description">{product.description}</p>
-                <div className="product-footer">
-                  <span className="product-price">${product.price}</span>
-                  <button 
-                    className="btn-primary btn-small"
-                    onClick={() => addToCart(product.id)}
+            {filteredProducts.map((product) => {
+              const hasOptions = ['1', '2', '3', '4'].includes(product.id);
+
+              return (
+                <div key={product.id} className="product-card">
+                  <button
+                    className="product-image-button"
+                    onClick={() => hasOptions ? openProductModal(product) : null}
+                    style={{ cursor: hasOptions ? 'pointer' : 'default' }}
                   >
-                    Add to Cart
+                    <div className="product-image">{product.image}</div>
                   </button>
+                  <h3>{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
+                  <div className="product-footer">
+                    {product.price > 0 && <span className="product-price">${product.price}</span>}
+                    {product.id === '5' ? (
+                      <Link href="/contact" className="btn-primary btn-small">
+                        Contact Us
+                      </Link>
+                    ) : hasOptions ? (
+                      <button
+                        className="btn-primary btn-small"
+                        onClick={() => openProductModal(product)}
+                      >
+                        View Options
+                      </button>
+                    ) : (
+                      <button
+                        className="btn-primary btn-small"
+                        onClick={() => addToCart(product.id)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {filteredProducts.length === 0 && (
@@ -151,6 +148,15 @@ export default function ProductsPage() {
             View Cart
           </Link>
         </div>
+      )}
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={closeProductModal}
+          onAddToCart={addToCart}
+        />
       )}
     </div>
   );

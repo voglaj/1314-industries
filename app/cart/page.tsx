@@ -85,7 +85,6 @@ export default function CartPage() {
               
               {cartItems.map((item) => (
                 <div key={item.id} className="cart-item">
-                  <div className="item-icon">📦</div>
                   <div className="item-details">
                     <h4>{item.name}</h4>
                     <p className="item-sku">SKU: {item.id}</p>

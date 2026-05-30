@@ -29,6 +29,12 @@ export default function CartPage() {
   }, []);
 
 
+  const removeFromCart = (itemId: string) => {
+    const updated = cartItems.filter(item => item.id !== itemId);
+    setCartItems(updated);
+    sessionStorage.setItem('cart', JSON.stringify(updated));
+  };
+
   const handleCheckout = async () => {
     setLoading(true);
     try {
@@ -40,7 +46,7 @@ export default function CartPage() {
 
       const { sessionId } = await response.json();
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
-      
+
       if (stripe) {
         await stripe.redirectToCheckout({ sessionId });
       }
@@ -95,6 +101,13 @@ export default function CartPage() {
                   <div className="item-price">
                     ${(item.price * item.quantity).toFixed(2)}
                   </div>
+                  <button
+                    className="item-remove"
+                    onClick={() => removeFromCart(item.id)}
+                    title="Remove from cart"
+                  >
+                    ×
+                  </button>
                 </div>
               ))}
             </div>

@@ -28,16 +28,6 @@ export default function CartPage() {
     }
   }, []);
 
-  const mockItems: Record<string, { name: string; price: number }> = {
-    '1': { name: 'Leather Bracelet', price: 34.99 },
-    '2': { name: 'Silver Necklace', price: 54.99 },
-    '3': { name: 'Crystal Award', price: 89.99 },
-    '4': { name: 'Wooden Plaque', price: 49.99 },
-    '5': { name: 'Personalized Mug', price: 14.99 },
-    '6': { name: 'Custom Keychain', price: 9.99 },
-    '7': { name: 'Branded Water Bottle', price: 24.99 },
-    '8': { name: 'Engraved Pen Set', price: 39.99 },
-  };
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -93,24 +83,21 @@ export default function CartPage() {
                 <span className="item-count">{cartItems.length} item(s)</span>
               </div>
               
-              {cartItems.map((item) => {
-                const product = mockItems[item.id];
-                return (
-                  <div key={item.id} className="cart-item">
-                    <div className="item-icon">📦</div>
-                    <div className="item-details">
-                      <h4>{product?.name || `Product ${item.id}`}</h4>
-                      <p className="item-sku">SKU: {item.id}</p>
-                    </div>
-                    <div className="item-quantity">
-                      <p>Qty: {item.quantity}</p>
-                    </div>
-                    <div className="item-price">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </div>
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <div className="item-icon">📦</div>
+                  <div className="item-details">
+                    <h4>{item.name}</h4>
+                    <p className="item-sku">SKU: {item.id}</p>
                   </div>
-                );
-              })}
+                  <div className="item-quantity">
+                    <p>Qty: {item.quantity}</p>
+                  </div>
+                  <div className="item-price">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="cart-summary">

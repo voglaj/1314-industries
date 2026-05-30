@@ -28,6 +28,26 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
 
   if (!isOpen) return null;
 
+  const getAdjustedPrice = () => {
+    const basePrices: Record<string, number> = {
+      '1': 25, // Coins
+      '2': 55, // Tumblers
+      '3': 35, // Koozies
+    };
+
+    const customDesignPrices: Record<string, number> = {
+      '1': 35, // Coins custom
+      '2': 65, // Tumblers custom
+      '3': 45, // Koozies custom
+    };
+
+    if ((product.id === '1' || product.id === '2' || product.id === '3') && selectedDesign === 'custom') {
+      return customDesignPrices[product.id] || product.price;
+    }
+
+    return product.price;
+  };
+
   const handleAddToCart = () => {
     const options: Record<string, string> = {};
 
@@ -221,8 +241,8 @@ export default function ProductModal({ product, isOpen, onClose, onAddToCart }: 
             )}
 
             <div className="modal-footer">
-              <span className="modal-price">${product.price}</span>
-              <button 
+              <span className="modal-price">${getAdjustedPrice()}</span>
+              <button
                 className="btn-primary btn-small"
                 onClick={handleAddToCart}
               >

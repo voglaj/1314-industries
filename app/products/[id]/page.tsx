@@ -21,6 +21,11 @@ const products: Product[] = [
   { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
 ];
 
+const ballMarkerImages = [
+  'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fcc778232df1e431287e2207691cc743d?format=webp&width=800&height=1200',
+  'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fe41049927fbc4a13ba21446609412e7f?format=webp&width=800&height=1200',
+];
+
 interface CartItem {
   id: string;
   name: string;
@@ -43,6 +48,7 @@ export default function ProductDetailPage() {
   // Design type
   const [selectedDesign, setSelectedDesign] = useState<string>('standard');
   const [quantity, setQuantity] = useState<number>(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -112,7 +118,31 @@ export default function ProductDetailPage() {
 
         <div className="product-detail-content">
           <div className="product-image-section">
-            <div className="product-image-large">{product.image}</div>
+            {productId === '4' ? (
+              <div className="image-gallery">
+                <div className="gallery-main">
+                  <img
+                    src={ballMarkerImages[currentImageIndex]}
+                    alt="Ball Marker Example"
+                    className="gallery-image"
+                  />
+                </div>
+                <div className="gallery-thumbnails">
+                  {ballMarkerImages.map((img, index) => (
+                    <button
+                      key={index}
+                      className={`thumbnail ${currentImageIndex === index ? 'active' : ''}`}
+                      onClick={() => setCurrentImageIndex(index)}
+                      aria-label={`View image ${index + 1}`}
+                    >
+                      <img src={img} alt={`Thumbnail ${index + 1}`} />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="product-image-large">{product.image}</div>
+            )}
           </div>
 
           <div className="product-info-section">

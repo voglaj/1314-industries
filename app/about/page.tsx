@@ -38,7 +38,7 @@ export default function About() {
             <div className="team-member">
               <div className="member-avatar"></div>
               <h3>Pat Engelbride</h3>
-              <p className="member-bio">Pat enjoys traveling, hunting, hiking, and exploring the outdoors. Having lived and worked throughout the Northeast and Mid-Atlantic regions before ultimately settling in Northern Virginia, he has developed a strong appreciation for travel and adventure. Pat has visited 39 states and numerous national parks, with a particular appreciation for the American West and the Adirondack Mountains.<br/>Professionally, Pat is a CPA based in Arlington, Virginia, where he specializes in corporate, partnership, and individual taxation. He earned his Bachelors degree in Accounting from the University of Maryland and his Masters degree in Accounting from Siena College. He also holds a certification in Fraud and Digital Forensics.</p>
+              <p className="member-bio">Pat enjoys traveling, hunting, hiking, and exploring the outdoors. Having lived and worked throughout the Northeast and Mid-Atlantic regions before ultimately settling in Northern Virginia, he has developed a strong appreciation for travel and adventure. Pat has visited 39 states and numerous national parks, with a particular appreciation for the American West and the Adirondack Mountains.<br/><br/>Professionally, Pat is a CPA based in Arlington, Virginia, where he specializes in corporate, partnership, and individual taxation. He earned his Bachelors degree in Accounting from the University of Maryland and his Masters degree in Accounting from Siena College. He also holds a certification in Fraud and Digital Forensics.</p>
             </div>
           </div>
         </div>

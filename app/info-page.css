@@ -20,6 +20,26 @@
   padding-bottom: 60px;
 }
 
+.info-text {
+  max-width: 800px;
+}
+
+.info-text p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.info-spacer {
+  height: 40px;
+}
+
+.info-actions {
+  display: flex;
+  gap: 16px;
+}
+
 .section-intro {
   text-align: center;
   color: var(--text-secondary);

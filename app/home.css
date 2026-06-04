@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: rotate-coin 8s infinite linear;
+  animation: carousel-rotate 8s infinite steps(1, end);
   opacity: 0;
 }
 
@@ -65,26 +65,22 @@
   opacity: 1;
 }
 
-@keyframes rotate-coin {
+@keyframes carousel-rotate {
   0% {
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
-  }
-  45% {
-    opacity: 1;
-    transform: rotateY(0deg) scale(1);
+    transform: translateX(0);
   }
   50% {
     opacity: 0;
-    transform: rotateY(90deg) scale(0.8);
+    transform: translateX(100%);
   }
-  55% {
+  50.1% {
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
+    transform: translateX(-100%);
   }
   100% {
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
+    transform: translateX(0);
   }
 }
 

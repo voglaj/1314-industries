@@ -122,6 +122,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -138,15 +140,18 @@ h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 32px;
+    font-size: 28px;
+    line-height: 1.15;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.15;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.15;
   }
 
   .container {
@@ -157,5 +162,19 @@ h3 {
   .btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
   }
 }

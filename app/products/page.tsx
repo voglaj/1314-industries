@@ -93,10 +93,14 @@ export default function ProductsPage() {
                 <div key={product.id} className="product-card">
                   {hasOptions ? (
                     <Link href={`/products/${product.id}`} className="product-image-link">
-                      <div className="product-image">{product.image}</div>
+                      <div className="product-image">
+                        {product.image && <img src={product.image} alt={product.name} />}
+                      </div>
                     </Link>
                   ) : (
-                    <div className="product-image">{product.image}</div>
+                    <div className="product-image">
+                      {product.image && <img src={product.image} alt={product.name} />}
+                    </div>
                   )}
                   <h3>{product.name}</h3>
                   <p className="product-description">{product.description}</p>

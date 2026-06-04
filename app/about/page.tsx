@@ -6,8 +6,7 @@ export default function About() {
     <main>
       <section className="info-header">
         <div className="container">
-          <h1>About Premium Engraving</h1>
-          <p>Crafting meaningful memories since 2024</p>
+          <h1>About 1314 Industries</h1>
         </div>
       </section>
 

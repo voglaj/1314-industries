@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import ProductModal from '../components/ProductModal';
 import '../products.css';
 
 interface Product {
@@ -25,6 +24,7 @@ const products: Product[] = [
 
 interface CartItem {
   id: string;
+  name: string;
   quantity: number;
   price: number;
 }
@@ -33,8 +33,6 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category') || 'all';
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('cart');
@@ -51,16 +49,6 @@ export default function ProductsPage() {
     ? products
     : products.filter(p => p.category === categoryFilter);
 
-  const openProductModal = (product: Product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-  };
-
-  const closeProductModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-  };
-
   const addToCart = (productId: string) => {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -73,7 +61,7 @@ export default function ProductsPage() {
         item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
       );
     } else {
-      updated = [...cart, { id: productId, quantity: 1, price: product.price }];
+      updated = [...cart, { id: productId, name: product.name, quantity: 1, price: product.price }];
     }
 
     setCart(updated);
@@ -97,13 +85,13 @@ export default function ProductsPage() {
 
               return (
                 <div key={product.id} className="product-card">
-                  <button
-                    className="product-image-button"
-                    onClick={() => hasOptions ? openProductModal(product) : null}
-                    style={{ cursor: hasOptions ? 'pointer' : 'default' }}
-                  >
+                  {hasOptions ? (
+                    <Link href={`/products/${product.id}`} className="product-image-link">
+                      <div className="product-image">{product.image}</div>
+                    </Link>
+                  ) : (
                     <div className="product-image">{product.image}</div>
-                  </button>
+                  )}
                   <h3>{product.name}</h3>
                   <p className="product-description">{product.description}</p>
                   <div className="product-footer">
@@ -113,12 +101,9 @@ export default function ProductsPage() {
                         Contact Us
                       </Link>
                     ) : hasOptions ? (
-                      <button
-                        className="btn-primary btn-small"
-                        onClick={() => openProductModal(product)}
-                      >
+                      <Link href={`/products/${product.id}`} className="btn-primary btn-small">
                         View Options
-                      </button>
+                      </Link>
                     ) : (
                       <button
                         className="btn-primary btn-small"
@@ -148,15 +133,6 @@ export default function ProductsPage() {
             View Cart
           </Link>
         </div>
-      )}
-
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          isOpen={isModalOpen}
-          onClose={closeProductModal}
-          onAddToCart={addToCart}
-        />
       )}
     </div>
   );

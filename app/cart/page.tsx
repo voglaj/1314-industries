@@ -28,15 +28,20 @@ export default function CartPage() {
     }
   }, []);
 
-  const mockItems: Record<string, { name: string; price: number }> = {
-    '1': { name: 'Leather Bracelet', price: 34.99 },
-    '2': { name: 'Silver Necklace', price: 54.99 },
-    '3': { name: 'Crystal Award', price: 89.99 },
-    '4': { name: 'Wooden Plaque', price: 49.99 },
-    '5': { name: 'Personalized Mug', price: 14.99 },
-    '6': { name: 'Custom Keychain', price: 9.99 },
-    '7': { name: 'Branded Water Bottle', price: 24.99 },
-    '8': { name: 'Engraved Pen Set', price: 39.99 },
+
+  const removeFromCart = (itemId: string) => {
+    const updated = cartItems.filter(item => item.id !== itemId);
+    setCartItems(updated);
+    sessionStorage.setItem('cart', JSON.stringify(updated));
+  };
+
+  const updateQuantity = (itemId: string, newQuantity: number) => {
+    if (newQuantity < 1) return;
+    const updated = cartItems.map(item =>
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
+    );
+    setCartItems(updated);
+    sessionStorage.setItem('cart', JSON.stringify(updated));
   };
 
   const handleCheckout = async () => {
@@ -50,7 +55,7 @@ export default function CartPage() {
 
       const { sessionId } = await response.json();
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
-      
+
       if (stripe) {
         await stripe.redirectToCheckout({ sessionId });
       }
@@ -93,24 +98,47 @@ export default function CartPage() {
                 <span className="item-count">{cartItems.length} item(s)</span>
               </div>
               
-              {cartItems.map((item) => {
-                const product = mockItems[item.id];
-                return (
-                  <div key={item.id} className="cart-item">
-                    <div className="item-icon">📦</div>
-                    <div className="item-details">
-                      <h4>{product?.name || `Product ${item.id}`}</h4>
-                      <p className="item-sku">SKU: {item.id}</p>
-                    </div>
-                    <div className="item-quantity">
-                      <p>Qty: {item.quantity}</p>
-                    </div>
-                    <div className="item-price">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </div>
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <div className="item-details">
+                    <h4>{item.name}</h4>
+                    <p className="item-sku">SKU: {item.id}</p>
                   </div>
-                );
-              })}
+                  <div className="item-quantity">
+                    <button
+                      className="qty-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      title="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      min="1"
+                      value={item.quantity}
+                      onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                      className="qty-input"
+                    />
+                    <button
+                      className="qty-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      title="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="item-price">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </div>
+                  <button
+                    className="item-remove"
+                    onClick={() => removeFromCart(item.id)}
+                    title="Remove from cart"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
             </div>
 
             <div className="cart-summary">

@@ -35,6 +35,15 @@ export default function CartPage() {
     sessionStorage.setItem('cart', JSON.stringify(updated));
   };
 
+  const updateQuantity = (itemId: string, newQuantity: number) => {
+    if (newQuantity < 1) return;
+    const updated = cartItems.map(item =>
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
+    );
+    setCartItems(updated);
+    sessionStorage.setItem('cart', JSON.stringify(updated));
+  };
+
   const handleCheckout = async () => {
     setLoading(true);
     try {
@@ -96,7 +105,27 @@ export default function CartPage() {
                     <p className="item-sku">SKU: {item.id}</p>
                   </div>
                   <div className="item-quantity">
-                    <p>Qty: {item.quantity}</p>
+                    <button
+                      className="qty-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      title="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      min="1"
+                      value={item.quantity}
+                      onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                      className="qty-input"
+                    />
+                    <button
+                      className="qty-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      title="Increase quantity"
+                    >
+                      +
+                    </button>
                   </div>
                   <div className="item-price">
                     ${(item.price * item.quantity).toFixed(2)}

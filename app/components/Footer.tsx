@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-content container">
         <div className="footer-section">
           <h3>Premium Engraving</h3>
-          <p>Crafting memories through custom engraving services since 2024.</p>
+          <p>Crafting memories through custom engraving services since 2026.</p>
         </div>
 
         <div className="footer-section">
@@ -34,8 +34,8 @@ export default function Footer() {
 
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
-          <p>Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+          <p>Email: <a href="mailto:pat@1314industries.com">pat@1314industries.com</a></p>
+          <p>Instagram: <a href="https://instagram.com/1314industries" target="_blank" rel="noopener noreferrer">@1314industries</a></p>
         </div>
       </div>
 

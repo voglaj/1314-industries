@@ -6,18 +6,18 @@
 .products-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white;
-  padding: 40px 0;
+  padding: 32px 0;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .products-header h1 {
   color: white;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .products-header p {
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
@@ -97,13 +97,13 @@
 
 .product-image {
   width: 100%;
-  padding: 40px;
+  padding: 30px 20px;
   background: var(--bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
-  min-height: 250px;
+  font-size: 56px;
+  min-height: 220px;
 }
 
 .product-image img {
@@ -180,9 +180,24 @@
 }
 
 @media (max-width: 768px) {
+  .products-header {
+    padding: 24px 0;
+    margin-bottom: 20px;
+  }
+
+  .products-header h1 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .products-header p {
+    font-size: 13px;
+  }
+
   .products-content {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+    padding-bottom: 40px;
   }
 
   .filters {
@@ -196,23 +211,55 @@
   .filter-group {
     flex-direction: row;
     overflow-x: auto;
-    gap: 8px;
+    gap: 6px;
   }
 
   .filter-link {
     white-space: nowrap;
     padding: 8px 12px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-card {
+    border-radius: 8px;
+  }
+
+  .product-card h3 {
+    padding: 16px 16px 0;
+    font-size: 16px;
+  }
+
+  .product-description {
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .product-footer {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  .btn-small {
+    padding: 12px 14px;
+    font-size: 12px;
+    min-height: 44px;
   }
 
   .cart-notification {
-    bottom: 20px;
-    right: 20px;
+    bottom: 16px;
+    right: 16px;
     flex-direction: column;
     gap: 12px;
+    padding: 16px;
+    font-size: 13px;
   }
 }

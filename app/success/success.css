@@ -111,24 +111,82 @@
   font-weight: 600;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .success-container {
+    padding: 16px;
+  }
+
   .success-content {
     padding: 40px 24px;
+    border-radius: 12px;
   }
 
   .success-icon {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     font-size: 36px;
+    margin-bottom: 20px;
   }
 
   .success-content h1 {
     font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .success-message {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .success-details {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .detail-item {
+    padding: 10px 0;
+  }
+
+  .detail-label,
+  .detail-value {
+    font-size: 13px;
+  }
+
+  .success-actions {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .success-actions .btn-primary,
+  .success-actions .btn-secondary {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .need-help {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-content {
+    padding: 32px 20px;
+  }
+
+  .success-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+  }
+
+  .success-content h1 {
+    font-size: 24px;
   }
 
   .detail-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
 }

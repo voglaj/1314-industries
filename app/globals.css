@@ -64,6 +64,9 @@ button {
   font-size: 14px;
   display: inline-block;
   box-shadow: var(--shadow-sm);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn-primary:hover {
@@ -80,7 +83,9 @@ button {
   border-radius: 6px;
   font-weight: 500;
   font-size: 14px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .btn-secondary:hover {
@@ -133,18 +138,24 @@ h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
+    font-size: 32px;
   }
-  
+
   h2 {
-    font-size: 28px;
-  }
-  
-  h3 {
     font-size: 24px;
   }
-  
+
+  h3 {
+    font-size: 20px;
+  }
+
   .container {
     padding: 0 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }

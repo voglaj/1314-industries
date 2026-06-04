@@ -19,14 +19,15 @@
 }
 
 .hero-text > p {
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .hero-image {
@@ -232,25 +233,34 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 0;
-    margin-bottom: 40px;
+    padding: 40px 0;
+    margin-bottom: 24px;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
   }
 
   .hero-text h1 {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .hero-text > p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .coin-carousel {
+    max-height: 280px;
   }
 
   .categories-grid,

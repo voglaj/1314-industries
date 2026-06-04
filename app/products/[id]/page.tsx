@@ -42,6 +42,7 @@ export default function ProductDetailPage() {
 
   // Design type
   const [selectedDesign, setSelectedDesign] = useState<string>('standard');
+  const [quantity, setQuantity] = useState<number>(1);
   const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -89,14 +90,15 @@ export default function ProductDetailPage() {
 
     if (existing) {
       updated = cart.map(item =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === productId ? { ...item, quantity: item.quantity + quantity } : item
       );
     } else {
-      updated = [...cart, { id: productId, name: product.name, quantity: 1, price: getAdjustedPrice() }];
+      updated = [...cart, { id: productId, name: product.name, quantity, price: getAdjustedPrice() }];
     }
 
     setCart(updated);
     sessionStorage.setItem('cart', JSON.stringify(updated));
+    setQuantity(1);
   };
 
   return (
@@ -279,6 +281,29 @@ export default function ProductDetailPage() {
 
             <div className="product-detail-footer">
               <span className="product-detail-price">${getAdjustedPrice()}</span>
+              <div className="quantity-selector">
+                <button
+                  className="qty-btn"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  title="Decrease quantity"
+                >
+                  −
+                </button>
+                <input
+                  type="number"
+                  min="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="qty-input"
+                />
+                <button
+                  className="qty-btn"
+                  onClick={() => setQuantity(quantity + 1)}
+                  title="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
               <button className="btn-primary" onClick={handleAddToCart}>
                 Add to Cart
               </button>

@@ -118,7 +118,7 @@ export default function ProductDetailPage() {
 
         <div className="product-detail-content">
           <div className="product-image-section">
-            {productId === '4' ? (
+            {productId === '4' && selectedSize === '40mm' && selectedType === 'brass' ? (
               <div className="image-gallery">
                 <div className="gallery-main">
                   <img

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import CartToast from './components/CartToast';
 
 export const metadata: Metadata = {
   title: 'Premium Engraving Services - Custom Gifts & Products',
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <CartToast />
       </body>
     </html>
   );

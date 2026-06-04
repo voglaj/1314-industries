@@ -28,17 +28,16 @@ export default function About() {
       <section className="team-section">
         <div className="container">
           <h2>Our Team</h2>
-          <p className="section-intro">Two friends with a shared goal</p>
           <div className="team-grid">
             <div className="team-member">
               <div className="member-avatar"></div>
               <h3>Matt Bievenue</h3>
-              <p className="member-bio">20+ years of engraving experience across all materials.</p>
+              <p className="member-bio">Matt enjoys spending time outdoors with his two dogs, Daisy and Finn, and can often be found exploring local trails and hiking destinations with them. In his free time, he also enjoys playing soccer, attending collector shows to trade Pokémon cards, and spending time with friends and family.<br/><br/>Professionally, Matt is a Process Support Engineer specializing in process optimization, operational efficiency, and technical problem-solving within highly regulated manufacturing environments. He earned his Bachelors degree in Biomedical Engineering from Stony Brook University and has built a career focused on continuous improvement, analytical thinking, and delivering high-quality results.</p>
             </div>
             <div className="team-member">
               <div className="member-avatar"></div>
               <h3>Pat Engelbride</h3>
-              <p className="member-bio">Pat enjoys traveling, hunting, hiking, and exploring the outdoors. Having lived and worked throughout the Northeast and Mid-Atlantic regions before ultimately settling in Northern Virginia, he has developed a strong appreciation for travel and adventure. Pat has visited 39 states and numerous national parks, with a particular appreciation for the American West and the Adirondack Mountains.<br/>Professionally, Pat is a CPA based in Arlington, Virginia, where he specializes in corporate, partnership, and individual taxation. He earned his Bachelors degree in Accounting from the University of Maryland and his Masters degree in Accounting from Siena College. He also holds a certification in Fraud and Digital Forensics.</p>
+              <p className="member-bio">Pat enjoys traveling, hunting, hiking, and exploring the outdoors. Having lived and worked throughout the Northeast and Mid-Atlantic regions before ultimately settling in Northern Virginia, he has developed a strong appreciation for travel and adventure. Pat has visited 39 states and numerous national parks, with a particular appreciation for the American West and the Adirondack Mountains.<br/><br/>Professionally, Pat is a CPA based in Arlington, Virginia, where he specializes in corporate, partnership, and individual taxation. He earned his Bachelors degree in Accounting from the University of Maryland and his Masters degree in Accounting from Siena College. He also holds a certification in Fraud and Digital Forensics.</p>
             </div>
           </div>
         </div>

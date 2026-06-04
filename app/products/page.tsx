@@ -18,7 +18,7 @@ const products: Product[] = [
   { id: '1', name: 'Coins', price: 25, category: 'gifts', image: '', description: 'Custom engraved coins for collections and gifts' },
   { id: '2', name: 'Tumblers', price: 55, category: 'gifts', image: '', description: 'Personalized tumblers with custom engraving' },
   { id: '3', name: 'Koozies', price: 35, category: 'gifts', image: '', description: 'Custom engraved koozies for beverages' },
-  { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
+  { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: 'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fcc778232df1e431287e2207691cc743d?format=webp&width=800&height=1200', description: 'Custom golf ball markers with engraved designs' },
   { id: '5', name: 'Inquire Here', price: 0, category: 'corporate', image: '', description: "Don't see what you are looking for? Contact us for custom product questions and bulk orders" },
 ];
 
@@ -66,6 +66,12 @@ export default function ProductsPage() {
 
     setCart(updated);
     sessionStorage.setItem('cart', JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent('itemAddedToCart', {
+        detail: { productName: product.name, quantity: 1 },
+      })
+    );
   };
 
   return (
@@ -87,10 +93,14 @@ export default function ProductsPage() {
                 <div key={product.id} className="product-card">
                   {hasOptions ? (
                     <Link href={`/products/${product.id}`} className="product-image-link">
-                      <div className="product-image">{product.image}</div>
+                      <div className="product-image">
+                        {product.image && <img src={product.image} alt={product.name} />}
+                      </div>
                     </Link>
                   ) : (
-                    <div className="product-image">{product.image}</div>
+                    <div className="product-image">
+                      {product.image && <img src={product.image} alt={product.name} />}
+                    </div>
                   )}
                   <h3>{product.name}</h3>
                   <p className="product-description">{product.description}</p>

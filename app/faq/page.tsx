@@ -50,7 +50,16 @@ export default function FAQ() {
             {faqs.map((faq) => (
               <div key={faq.id} className="faq-item">
                 <h4>{faq.question}</h4>
-                <p>{faq.answer}</p>
+                <p>
+                  {faq.id === '6' ? (
+                    <>
+                      Yes! We specialize in corporate engraving.{' '}
+                      <Link href="/contact">Contact us</Link> for bulk orders and custom quotes.
+                    </>
+                  ) : (
+                    faq.answer
+                  )}
+                </p>
               </div>
             ))}
           </div>

@@ -66,6 +66,12 @@ export default function ProductsPage() {
 
     setCart(updated);
     sessionStorage.setItem('cart', JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent('itemAddedToCart', {
+        detail: { productName: product.name, quantity: 1 },
+      })
+    );
   };
 
   return (

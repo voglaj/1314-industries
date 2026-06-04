@@ -104,6 +104,13 @@ export default function ProductDetailPage() {
 
     setCart(updated);
     sessionStorage.setItem('cart', JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent('itemAddedToCart', {
+        detail: { productName: product.name, quantity },
+      })
+    );
+
     setQuantity(1);
   };
 

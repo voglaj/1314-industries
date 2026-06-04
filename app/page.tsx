@@ -2,6 +2,19 @@ import Link from 'next/link';
 import './home.css';
 
 export default function Home() {
+  const coins = [
+    {
+      id: 1,
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fcc778232df1e431287e2207691cc743d?format=webp&width=800&height=1200',
+      name: '1314 Industries',
+    },
+    {
+      id: 2,
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fe41049927fbc4a13ba21446609412e7f?format=webp&width=800&height=1200',
+      name: 'Rust Coin',
+    },
+  ];
+
   const categories = [
     {
       id: 'jewelry',
@@ -46,8 +59,12 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-image">
-            <div className="hero-placeholder">
-              ✨ Premium Engraving ✨
+            <div className="coin-carousel">
+              {coins.map((coin) => (
+                <div key={coin.id} className="coin-slide">
+                  <img src={coin.image} alt={coin.name} className="coin-image" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -18,7 +18,6 @@ export default function Footer() {
             <li><Link href="/products">Shop</Link></li>
             <li><Link href="/how-it-works">How It Works</Link></li>
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
 
@@ -27,6 +26,7 @@ export default function Footer() {
           <ul className="footer-links">
             <li><Link href="/faq">FAQ</Link></li>
             <li><Link href="/shipping-returns">Shipping & Returns</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
 

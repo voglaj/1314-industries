@@ -24,6 +24,13 @@
   max-width: 800px;
 }
 
+.info-text h2 {
+  color: var(--text-primary);
+  font-size: 24px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
 .info-text p {
   color: var(--text-secondary);
   font-size: 16px;

@@ -26,9 +26,7 @@ export default function Footer() {
           <h4>Customer Service</h4>
           <ul className="footer-links">
             <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/shipping">Shipping Info</Link></li>
-            <li><Link href="/returns">Returns & Refunds</Link></li>
-            <li><Link href="/privacy">Privacy Policy</Link></li>
+            <li><Link href="/shipping-returns">Shipping & Returns</Link></li>
           </ul>
         </div>
 

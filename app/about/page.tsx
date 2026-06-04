@@ -33,7 +33,7 @@ export default function About() {
             <div className="team-member">
               <div className="member-avatar"></div>
               <h3>Matt Bievenue</h3>
-              <p className="member-bio">20+ years of engraving experience across all materials.</p>
+              <p className="member-bio">Matt enjoys spending time outdoors with his two dogs, Daisy and Finn, and can often be found exploring local trails and hiking destinations with them. In his free time, he also enjoys playing soccer, attending collector shows to trade Pokémon cards, and spending time with friends and family.<br/><br/>Professionally, Matt is a Process Support Engineer specializing in process optimization, operational efficiency, and technical problem-solving within highly regulated manufacturing environments. He earned his Bachelors degree in Biomedical Engineering from Stony Brook University and has built a career focused on continuous improvement, analytical thinking, and delivering high-quality results.</p>
             </div>
             <div className="team-member">
               <div className="member-avatar"></div>

@@ -219,6 +219,34 @@ export default function ProductDetailPage() {
                     </label>
                   </div>
                 </div>
+
+                {product.id === '1' && (
+                  <div className="option-section">
+                    <h3>Design Type</h3>
+                    <div className="options-group">
+                      <label className="option-radio">
+                        <input
+                          type="radio"
+                          name="design"
+                          value="standard"
+                          checked={selectedDesign === 'standard'}
+                          onChange={(e) => setSelectedDesign(e.target.value)}
+                        />
+                        <span>Standard Design</span>
+                      </label>
+                      <label className="option-radio">
+                        <input
+                          type="radio"
+                          name="design"
+                          value="custom"
+                          checked={selectedDesign === 'custom'}
+                          onChange={(e) => setSelectedDesign(e.target.value)}
+                        />
+                        <span>Custom Design</span>
+                      </label>
+                    </div>
+                  </div>
+                )}
               </>
             )}
 
@@ -286,34 +314,6 @@ export default function ProductDetailPage() {
                   </div>
                 </div>
               </>
-            )}
-
-            {product.id === '1' && (
-              <div className="option-section">
-                <h3>Design Type</h3>
-                <div className="options-group">
-                  <label className="option-radio">
-                    <input
-                      type="radio"
-                      name="design"
-                      value="standard"
-                      checked={selectedDesign === 'standard'}
-                      onChange={(e) => setSelectedDesign(e.target.value)}
-                    />
-                    <span>Standard Design</span>
-                  </label>
-                  <label className="option-radio">
-                    <input
-                      type="radio"
-                      name="design"
-                      value="custom"
-                      checked={selectedDesign === 'custom'}
-                      onChange={(e) => setSelectedDesign(e.target.value)}
-                    />
-                    <span>Custom Design</span>
-                  </label>
-                </div>
-              </div>
             )}
 
             <div className="product-detail-footer">

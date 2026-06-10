@@ -21,13 +21,6 @@ const products: Product[] = [
   { id: '4', name: 'Ball Markers', price: 10, category: 'gifts', image: '', description: 'Custom golf ball markers with engraved designs' },
 ];
 
-const coin32mmImages = [
-  'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fdd731b77cb194b3598367f09b86f7900?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Ff31b820bbf324cff99d5b90fa0945d7b?format=webp&width=800&height=1200',
-];
-
-const coin40mmImages: string[] = [];
-
 const ballMarkerImages = [
   'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fcc778232df1e431287e2207691cc743d?format=webp&width=800&height=1200',
   'https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fe41049927fbc4a13ba21446609412e7f?format=webp&width=800&height=1200',
@@ -132,51 +125,7 @@ export default function ProductDetailPage() {
 
         <div className="product-detail-content">
           <div className="product-image-section">
-            {productId === '1' && selectedSize === '32mm' && coin32mmImages.length > 0 ? (
-              <div className="image-gallery">
-                <div className="gallery-main">
-                  <img
-                    src={coin32mmImages[currentImageIndex]}
-                    alt="32mm Coin"
-                    className="gallery-image"
-                  />
-                </div>
-                <div className="gallery-thumbnails">
-                  {coin32mmImages.map((img, index) => (
-                    <button
-                      key={index}
-                      className={`thumbnail ${currentImageIndex === index ? 'active' : ''}`}
-                      onClick={() => setCurrentImageIndex(index)}
-                      aria-label={`View image ${index + 1}`}
-                    >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : productId === '1' && selectedSize === '40mm' && coin40mmImages.length > 0 ? (
-              <div className="image-gallery">
-                <div className="gallery-main">
-                  <img
-                    src={coin40mmImages[currentImageIndex]}
-                    alt="40mm Coin"
-                    className="gallery-image"
-                  />
-                </div>
-                <div className="gallery-thumbnails">
-                  {coin40mmImages.map((img, index) => (
-                    <button
-                      key={index}
-                      className={`thumbnail ${currentImageIndex === index ? 'active' : ''}`}
-                      onClick={() => setCurrentImageIndex(index)}
-                      aria-label={`View image ${index + 1}`}
-                    >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : productId === '4' && selectedSize === '40mm' && selectedType === 'brass' ? (
+            {productId === '4' && selectedSize === '40mm' && selectedType === 'brass' ? (
               <div className="image-gallery">
                 <div className="gallery-main">
                   <img

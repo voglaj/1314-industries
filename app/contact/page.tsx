@@ -50,9 +50,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">
-                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fa631c0a808214b208898804fa34c5073?format=webp&width=800&height=1200" alt="Instagram" className="contact-logo" />
-                </div>
+                <div className="contact-icon">📱</div>
                 <div>
                   <h3>Instagram</h3>
                   <p><a href="https://instagram.com/1314Industries" target="_blank" rel="noopener noreferrer">@1314Industries</a></p>
@@ -60,9 +58,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon">
-                  <img src="https://cdn.builder.io/api/v1/image/assets%2Fa9cd9068cd31419ba82b48ce6c30f6b8%2Fdf898e810bbc4b67b7a85c859f89f3cc?format=webp&width=800&height=1200" alt="Facebook" className="contact-logo" />
-                </div>
+                <div className="contact-icon">👥</div>
                 <div>
                   <h3>Facebook</h3>
                   <p><a href="https://facebook.com/1314Industries" target="_blank" rel="noopener noreferrer">1314 Industries</a></p>

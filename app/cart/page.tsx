@@ -53,7 +53,13 @@ export default function CartPage() {
         body: JSON.stringify({ items: cartItems }),
       });
 
-      const { sessionId } = await response.json();
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create checkout session');
+      }
+
+      const { sessionId } = data;
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
 
       if (stripe) {
@@ -61,7 +67,8 @@ export default function CartPage() {
       }
     } catch (error) {
       console.error('Checkout error:', error);
-      alert('Error processing checkout. Please try again.');
+      const message = error instanceof Error ? error.message : 'Error processing checkout. Please try again.';
+      alert(message);
     } finally {
       setLoading(false);
     }

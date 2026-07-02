@@ -64,6 +64,9 @@ button {
   font-size: 14px;
   display: inline-block;
   box-shadow: var(--shadow-sm);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn-primary:hover {
@@ -80,7 +83,9 @@ button {
   border-radius: 6px;
   font-weight: 500;
   font-size: 14px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .btn-secondary:hover {
@@ -117,6 +122,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -133,18 +140,41 @@ h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
-  }
-  
-  h2 {
     font-size: 28px;
+    line-height: 1.15;
   }
-  
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
   h3 {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 1.15;
   }
-  
+
   .container {
     padding: 0 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
   }
 }

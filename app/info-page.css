@@ -431,8 +431,20 @@
 
 @media (max-width: 768px) {
   .info-header {
-    padding: 40px 0 30px;
-    margin-bottom: 40px;
+    padding: 32px 0 24px;
+    margin-bottom: 32px;
+  }
+
+  .info-header h1 {
+    font-size: 28px;
+  }
+
+  .info-header p {
+    font-size: 14px;
+  }
+
+  .info-content {
+    padding-bottom: 40px;
   }
 
   .steps-grid,
@@ -444,26 +456,32 @@
   }
 
   .contact-layout {
-    gap: 40px;
+    gap: 32px;
   }
 
   .contact-form {
-    padding: 24px;
+    padding: 20px;
   }
 
   .team-member,
   .step-card,
   .value-card,
   .faq-item {
-    padding: 24px;
+    padding: 20px;
   }
 
   .member-avatar {
-    font-size: 60px;
+    font-size: 56px;
+    margin-bottom: 12px;
   }
 
   .step-icon {
     font-size: 40px;
+    margin: 12px 0;
+  }
+
+  .step-card h3 {
+    font-size: 16px;
   }
 
   .contact-icon {
@@ -475,12 +493,54 @@
   }
 
   .cta-section {
-    padding: 40px 0;
+    padding: 32px 0;
   }
 
   .cta-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .info-text h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .info-text p,
+  .about-section p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .section-intro {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .about-sections {
+    gap: 40px;
+  }
+
+  .values-grid {
+    gap: 16px;
+  }
+
+  .features-list li {
+    padding: 8px 0;
+    padding-left: 28px;
+    font-size: 14px;
+  }
+
+  .contact-details {
+    gap: 24px;
+  }
+
+  .contact-item h3 {
+    font-size: 14px;
+  }
+
+  .contact-item p {
+    font-size: 13px;
   }
 }
 

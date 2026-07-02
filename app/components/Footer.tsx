@@ -32,7 +32,7 @@ export default function Footer() {
 
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Email: <a href="mailto:pat@1314industries.com">pat@1314industries.com</a></p>
+          <p>Email: <a href="mailto:support@1314industries.com">support@1314industries.com</a></p>
           <p>Instagram: <a href="https://instagram.com/1314industries" target="_blank" rel="noopener noreferrer">@1314industries</a></p>
         </div>
       </div>

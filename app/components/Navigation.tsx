@@ -52,9 +52,6 @@ export default function Navigation() {
           <Link href="/faq" className="nav-link" onClick={closeMenu}>
             FAQ
           </Link>
-          <Link href="/about" className="nav-link" onClick={closeMenu}>
-            About
-          </Link>
           <Link href="/contact" className="nav-link" onClick={closeMenu}>
             Contact
           </Link>
